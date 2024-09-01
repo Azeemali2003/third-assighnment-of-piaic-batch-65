@@ -1,61 +1,98 @@
 #all programs of the assighnment
 #age according to the year
-from datetime import datetime
-current_year=datetime.now().year
-birth_year = int(input("enter your birth year:"))
-age=current_year-birth_year
-print(age)
+def age_calculator(birth_year, current_year):
+    print(f"Your age is {current_year-birth_year}")                            
 
+print("Age calculator")
+birth_year   = int(input("Enter your birth Year:   "))            
+current_year = int(input("Enter your Current Year: "))
+age_calculator(birth_year, current_year)
 
 #programe to calculate area of rectangle
-length:int=int(input("Enter the length:"))
-width:int=int(input("Enter the width:"))
-Area=length*width
-print(Area)
+def rectangle_area(length, width):
+    print(f"The area of rectangle is {length * width}")
+
+length = int(input("Enter length: "))
+width = int(input("Enter width:   "))
+rectangle_area(length, width)
 
 #calculates the area of circle
-import math
-radius=float(input("Enter the radius of the circle:"))
-area=math.pi*radius*radius
-print("Area of the circle is:{0}".format(area))
+def circle_area(radius, pie_value):
+    print(pie_value * (radius**2))
+
+radius = int(input("Enter the radius of the circle: "))
+pie_value : float = 3.1416
+circle_area(radius, pie_value)
 
 #writes a program that calculates the area of the cube
-side=float(input("side="))
+def cube_area(length, width, height):
+    print(f"The area of cube is {length * width * height}")
 
-area=6*side*side
-print("AREA=",area)
+length = int(input("Enter length: "))
+width = int(input("Enter width:   "))
+height = int(input("Enter height: "))
+cube_area(length, width, height)
 
 #converts farenheit to celcius and vise versa
-F=float(input("F="))
+def temp_fahrenheit(celsius):
+    print(f"{celsius} celsius = {(celsius * 9/5) + 32} fahrenheit")
 
-celsiustofarenheit=(F-32)*5/9
-print("celsius to Farenheit:",celsiustofarenheit)
+def temp_celsius(fahrenheit):
+    print(f"{fahrenheit} fahrenheit = {(fahrenheit - 32) * 5/9} Celsius")
+
+celsius = float(input("Enter temperature in celsius: "))
+fahrenheit = float(input("Enter temperature in fahrenheit: "))
+temp_fahrenheit(celsius)
+temp_celsius(fahrenheit)
 
 #converts given number of seconds into minutes and second using variables
-import math
-S=float(input("S="))
-secondstominute=S/60
-print("SECONDS TO MINUTE=",secondstominute)
+def second_minutes(time):
+    print(f"{time} minutes = {(time * 60)} Seconds")
+
+print("Time Calculator (Minutes -> Seconds)")
+time = int(input("Enter your time in minutes: "))
+second_minutes(time)
 
 #write a program that calculates the percentage 
-import math
-numbers=float(input("numbers="))
-total=float(input("total="))
-percentage=numbers/total*100
-print(percentage)
+def percentage_cal(percentage_value, total_marks):
+    return (percentage_value / 100) * total_marks
+
+print("Percentage Calculator")
+percentage_value = int(input("Enter the percentage to calculate: "))
+total_marks = int(input("Enter the total marks: "))
+result = percentage_cal(percentage_value, total_marks)
+print("The calculated marks are:", result)
 
 #write a program that calculates the bmi 
+def bmi_calculator(weight, height):
+    bmi = weight / (height ** 2)  
+    
+    if bmi < 18.5:
+        category = "Underweight"
+    elif 18.5 <= bmi < 25:
+        category = "Normal"
+    elif 25 <= bmi < 30:
+        category = "Overweight"
+    else:
+        category = "Obesity"
+    
+    print("Your BMI is:", bmi)
+    print("Category:", category)
 
-import math
-weight=float(input("weight in kg="))
-height=float(input("height in cm=",))
-BMI=weight/height**2
-print(BMI)
+print("BMI Calculator")
+weight = float(input("Enter your weight in kg: "))
+height = int(input("Enter your height in meters: "))
+
+bmi_calculator(weight, height)
 
 #program to calculate the volume of the cylinder
-import math
-r=float(input("r="))
-h=float(input("h="))
-Volume=math.pi*r**2*h
-print(Volume)
+def calculate_cylinder_volume(radius, height):
+    pie_value = 3.1416
+    volume = pie_value * (radius ** 2) * height
+    print("Volume of Cylinder is:", volume)
 
+print("Cylinder Volume Calculator (V = πr²h)")
+radius = int(input("Enter your radius: "))
+height = int(input("Enter your height: "))
+
+calculate_cylinder_volume(radius, height)
